@@ -66,7 +66,7 @@ Example : facebook login injection
 ![](pic2.png)
 
 <br/>
-Note : it's dangerous to type important data in webview with unoffical app.
+Note : it's dangerous to give important information in webview with unoffical app.
 -----------
 
 <br/><br/>
