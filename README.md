@@ -68,6 +68,3 @@ Example : facebook login injection
 <br/>
 Note : it's dangerous to give important information in webview with unoffical app.
 -----------
-
-<br/><br/>
-henrychuang.tw@gmail.com
