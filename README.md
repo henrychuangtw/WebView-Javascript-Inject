@@ -59,7 +59,7 @@ webview1.setWebViewClient(new WebViewClient() {
 });
 ```
 
-Example : facebook login injection
+Example : twitter login injection
 -----------
 ![](pic1.png)
 <br/>
